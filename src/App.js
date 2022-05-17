@@ -1,6 +1,6 @@
 import * as React from "react";
-// import RadarChart from "react-svg-radar-chart";
-// import "react-svg-radar-chart/build/css/index.css";
+import RadarChart from "react-svg-radar-chart";
+import "react-svg-radar-chart/build/css/index.css";
 import { fromDecimal, toDecimal, clamp, keyify } from "./utils";
 import { styled } from "@linaria/react";
 import { transparentize } from "polished";
@@ -226,7 +226,9 @@ function App() {
             matrixColor={colors[allMatrices.indexOf(currentMatrix)]}
           />
         )}
-        <div></div>
+        <div>
+          {showGraph && <RadarChart {...{ options, data, captions }} />}
+        </div>
       </GridContainer>
     </>
   );
