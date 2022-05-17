@@ -42,6 +42,8 @@ const FormContainer = styled.div`
   background: ${(props) => transparentize(0.65, props.matrixColor)};
 `;
 
+const MatricesContainer = styled.div``;
+
 const ChartContainer = styled.div`
   padding-left: 30px;
   padding-right: 30px;
@@ -151,7 +153,6 @@ function App() {
     }, {});
 
     if (shouldUpdate) {
-      console.log("a thing is happening");
       setSkillsData(newMatrixData);
     }
   }, [allMatrices, captions, skillsData]);
@@ -204,9 +205,9 @@ function App() {
 
   return (
     <>
-      <h1 className="">Skills Matrix</h1>
+      <h1>Skills Matrix</h1>
       <GridContainer>
-        <div>
+        <MatricesContainer>
           <h2>All matrices</h2>
           {allMatrices.map((matrixLabel, i) => (
             <SeriesLabel
@@ -225,7 +226,7 @@ function App() {
             />
             <button onClick={handleAddNewSeries}>Add matrix</button>
           </div>
-        </div>
+        </MatricesContainer>
         {skillsData[currentMatrixKey] && (
           <EditSkillSummary
             matrixTitle={currentMatrix}
