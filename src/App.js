@@ -7,7 +7,7 @@ import { transparentize } from "polished";
 
 const MIN_RANK = 0;
 const MAX_RANK = 5;
-const MAX_SERIES = 5;
+const _MAX_SERIES = 5;
 const THEME = [
   "#540054",
   "#005400",
@@ -87,8 +87,8 @@ function EditSkillSummary({
 }
 
 function App() {
-  const [colors, setColors] = React.useState(THEME);
-  const [tools, setTools] = React.useState(["Mastering typescript"]);
+  const [colors, _setColors] = React.useState(THEME);
+  const [tools, _setTools] = React.useState(["Mastering typescript"]);
   const [skillsData, setSkillsData] = React.useState({});
   const [allMatrices, setAllMatrices] = React.useState(["Current skills"]);
   const [currentMatrix, setCurrentMatrix] = React.useState(allMatrices[0]);
