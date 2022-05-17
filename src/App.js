@@ -42,6 +42,15 @@ const FormContainer = styled.div`
   background: ${(props) => transparentize(0.65, props.matrixColor)};
 `;
 
+const ChartContainer = styled.div`
+  padding-left: 30px;
+  padding-right: 30px;
+  svg {
+    width: 100%;
+    height: 70%;
+  }
+`;
+
 const SkillInput = styled.label`
   display: block;
   padding-bottom: 5px;
@@ -226,9 +235,11 @@ function App() {
             matrixColor={colors[allMatrices.indexOf(currentMatrix)]}
           />
         )}
-        <div>
-          {showGraph && <RadarChart {...{ options, data, captions }} />}
-        </div>
+        {showGraph && (
+          <ChartContainer>
+            <RadarChart {...{ options, data, captions }} />
+          </ChartContainer>
+        )}
       </GridContainer>
     </>
   );
